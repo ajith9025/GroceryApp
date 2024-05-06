@@ -28,18 +28,10 @@ public class Crud {
 	public static void delete(int items) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		Connection connection = db.getConnection();
-		String query = "delete from product where items=3";
+		String query = "delete from product where items= ?";
 		PreparedStatement prepare =connection.prepareStatement(query);
+		prepare.setInt(1, items);
 		System.out.println("deleted successfully");
-		prepare.execute();
-		connection.close();
-	}
-	
-	public static void  update(String productName) throws ClassNotFoundException, SQLException {
-		Connection connection =db.getConnection();
-		String query = "update product set product_name= 'snacks' where items=11";
-		PreparedStatement prepare =connection.prepareStatement(query);
-		System.out.println("updated successfully");
 		prepare.execute();
 		connection.close();
 	}
@@ -85,7 +77,27 @@ public class Crud {
             System.out.println("Login already exists .");
         }
 
-	}  
-      	
+	}
 
+	public static void update(int items,int productId,int qty,int price,int totalPrice) throws SQLException, ClassNotFoundException {
+
+		Connection connection = db.getConnection();
+		String query = "update product set product_id= ?,qty = ?,price = ?,totalPrice = ? where items= ?";
+		PreparedStatement prepare = connection.prepareStatement(query);
+		prepare.setInt(1, productId);
+		prepare.setInt(2, qty);
+		prepare.setInt(3, price);
+		prepare.setInt(4, totalPrice);
+		prepare.setInt(5, items);
+		int executeUpdate=prepare.executeUpdate();
+		/*
+		 if(executeUpdate==1) {
+			System.out.println("updated");
+		}
+		else
+			System.out.println("Not updated");*/
+		connection.close();
+		
+	}
 }
+

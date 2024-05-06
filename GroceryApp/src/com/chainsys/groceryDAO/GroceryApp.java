@@ -8,7 +8,7 @@ public class GroceryApp {
 
 	public static void purchase(String userName) {
 		System.out.println();
-		if (userName.matches("^[A-Za-z]+[@#$%!]+[0-9]+$")) {
+		if (userName.matches("^[A-Za-z]+[0-9]+$")) {
 			System.out.println("valid ");
 		} else
 			System.out.println("Invalid");
@@ -147,6 +147,8 @@ public class GroceryApp {
 	{
 		System.out.println("Login successfully");
 	}
+	
+
 
 }
 
