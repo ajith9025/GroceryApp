@@ -1,14 +1,23 @@
 package com.chainsys.groceryDAO;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
 public class GroceryApp {
-
+    Scanner sc=new Scanner(System.in);
 	public static void purchase(String userName) {
 		System.out.println();
-		if (userName.matches("^[A-Za-z]+[0-9]+$")) {
+		if (userName.matches("[A-Za-z]+[0-9](2-15")) {
+			System.out.println("valid ");
+		} else
+			System.out.println("Invalid");
+
+	}
+	public static void password(String passWord) {
+		System.out.println();
+		if (passWord.matches("[A-Za-z]+[0-9](2-15)")) {
 			System.out.println("valid ");
 		} else
 			System.out.println("Invalid");
@@ -67,9 +76,16 @@ public class GroceryApp {
 		a1.add("a.bingo");
 		a1.add("b.biscuits");
 		a1.add("c.cholates");
+		try {
 		for(String snacks:a1)
 			System.out.println(snacks);
-		
+		    System.out.println(a1.get(5));
+		}catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		//for(String snacks:a1)
+			//System.out.println(snacks);
 		char choice = sc.next().toLowerCase().charAt(0);
 
 		switch (choice) {
@@ -94,8 +110,16 @@ public class GroceryApp {
 		a1.add("a.potato");
 		a1.add("b.tomato");
 		a1.add("c.carrot");
-		for(String vegetable:a1)
-			System.out.println(vegetable);
+		try {
+			for(String snacks:a1)
+				System.out.println(snacks);
+			    System.out.println(a1.get(5));
+			}catch(Exception e)
+			{
+				System.out.println(e.getMessage());
+			}
+		//for(String vegetable:a1)
+			//System.out.println(vegetable);
 		
 		char choice = sc.next().toLowerCase().charAt(0);
 		switch (choice) {
@@ -120,8 +144,16 @@ public class GroceryApp {
 		a1.add("a.mango");
 		a1.add("b.orange");
 		a1.add("c.apple");
-		for(String fruits:a1)
-			System.out.println(fruits);
+		try {
+			for(String snacks:a1)
+				System.out.println(snacks);
+			    System.out.println(a1.get(5));
+			}catch(Exception e)
+			{
+				System.out.println(e.getMessage());
+			}
+		//for(String fruits:a1)
+			//System.out.println(fruits);
 		
 		char choice = sc.next().toLowerCase().charAt(0);
 		switch (choice) {

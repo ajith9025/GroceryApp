@@ -61,7 +61,7 @@ public class Crud {
 	public static void login( String username, int password )
             throws ClassNotFoundException, SQLException {
         Connection connection =db.getConnection();
-        String selectQuery = "select username,password from user where username= ? ";
+        String selectQuery = "select username,password from login where username= ? ";
         PreparedStatement prepare = connection.prepareStatement(selectQuery);
         prepare.setString(1, username);
         ResultSet rs = prepare.executeQuery();
@@ -99,5 +99,6 @@ public class Crud {
 		connection.close();
 		
 	}
+	
 }
 

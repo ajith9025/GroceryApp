@@ -36,12 +36,12 @@ public class ABCGrocery extends Grocery implements GroceryDetails {
 	}
 
 
-	@Override
-	public String location() {
-		// TODO Auto-generated method stub
-		System.out.println("trichy");
-		return null;
-	}
+//	@Override
+	//public String location() {
+	//	// TODO Auto-generated method stub
+	//	System.out.println("trichy");
+	//	return null;
+	//}
 
 
 	@Override
@@ -50,6 +50,8 @@ public class ABCGrocery extends Grocery implements GroceryDetails {
 		System.out.println("Thank you for using this GroceryApp");
 		return null;
 	}
+
+
 
 	
 	}
