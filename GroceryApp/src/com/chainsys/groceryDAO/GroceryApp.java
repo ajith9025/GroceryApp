@@ -1,9 +1,13 @@
 package com.chainsys.groceryDAO;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
+
+import com.chainsys.util.Crud;
 
 public class GroceryApp {
     Scanner sc=new Scanner(System.in);
@@ -80,7 +84,7 @@ public class GroceryApp {
 		for(String snacks:a1)
 			System.out.println(snacks);
 		    System.out.println(a1.get(5));
-		}catch(Exception e)
+		}catch(IndexOutOfBoundsException e)
 		{
 			System.out.println(e.getMessage());
 		}
@@ -114,7 +118,7 @@ public class GroceryApp {
 			for(String snacks:a1)
 				System.out.println(snacks);
 			    System.out.println(a1.get(5));
-			}catch(Exception e)
+			}catch(IndexOutOfBoundsException e)
 			{
 				System.out.println(e.getMessage());
 			}
@@ -148,7 +152,7 @@ public class GroceryApp {
 			for(String snacks:a1)
 				System.out.println(snacks);
 			    System.out.println(a1.get(5));
-			}catch(Exception e)
+			}catch(IndexOutOfBoundsException e)
 			{
 				System.out.println(e.getMessage());
 			}
@@ -180,7 +184,131 @@ public class GroceryApp {
 		System.out.println("Login successfully");
 	}
 	
-
-
+	public static void HOME() {
+		Scanner sc = new Scanner(System.in);
+	/*	System.out.println("a.potato");
+		System.out.println("b.tomato");
+		System.out.println("c.carrot");*/
+		List<String> a1=new ArrayList<String>();
+		a1.add("a)qwertyuiop");
+		a1.add("b)trvxvvs");
+		a1.add("c)mjaamn");
+			for(String HOME:a1)
+				System.out.println(HOME);
+		
+		char choice = sc.next().toLowerCase().charAt(0);
+		switch (choice) {
+		case 'a':
+			System.out.println("qwertyuiop");
+			break;
+		case 'b':
+			System.out.println("trvxvvs");
+			break;
+		case 'c':
+			System.out.println("mjaamn");
+			break;
+		}
+	}
+	public static void ABOUT() {
+		Scanner sc = new Scanner(System.in);
+	/*	System.out.println("a.potato");
+		System.out.println("b.tomato");
+		System.out.println("c.carrot");*/
+		List<String> a1=new ArrayList<String>();
+		a1.add("a)Join the Community");
+		a1.add("b)Where to Start");
+		a1.add("c)Plans and Pricing");
+			for(String ABOUT:a1)
+				System.out.println(ABOUT);
+		
+		char choice = sc.next().toLowerCase().charAt(0);
+		switch (choice) {
+		case 'a':
+			System.out.println("Join the Community");
+			break;
+		case 'b':
+			System.out.println("Where to Start");
+			break;
+		case 'c':
+			System.out.println("Plans and Pricing");
+			break;
+		}
+	}
+	public static void CONTACT() {
+		Scanner sc = new Scanner(System.in);
+	/*	System.out.println("a.potato");
+		System.out.println("b.tomato");
+		System.out.println("c.carrot");*/
+		List<String> a1=new ArrayList<String>();
+		a1.add("a)1234567890");
+		a1.add("b)9277236822");
+		a1.add("c)8765437833");
+			for(String CONTACT:a1)
+				System.out.println(CONTACT);
+		
+		char choice = sc.next().toLowerCase().charAt(0);
+		switch (choice) {
+		case 'a':
+			System.out.println("1234567890");
+			break;
+		case 'b':
+			System.out.println("9277236822");
+			break;
+		case 'c':
+			System.out.println("8765437833");
+			break;
+		}
+	}
+	public static void CART() {
+		Scanner sc = new Scanner(System.in);
+	/*	System.out.println("a.potato");
+		System.out.println("b.tomato");
+		System.out.println("c.carrot");*/
+		List<String> a1=new ArrayList<String>();
+		a1.add("a)biscuits");
+		a1.add("b)potato");
+		a1.add("c)mango");
+			for(String CART:a1)
+				System.out.println(CART);
+		
+		char choice = sc.next().toLowerCase().charAt(0);
+		switch (choice) {
+		case 'a':
+			System.out.println("add to cart:biscuits");
+			break;
+		case 'b':
+			System.out.println("add to cart:potato");
+			break;
+		case 'c':
+			System.out.println("add to cart:mango");
+			break;
+		}
+	}
+	
+	public static void ORDER()  {
+		Scanner sc = new Scanner(System.in);
+	/*	System.out.println("a.potato");
+		System.out.println("b.tomato");
+		System.out.println("c.carrot");*/
+		List<String> a1=new ArrayList<String>();
+		a1.add("a)snacks");
+		a1.add("b)vegetable");
+		a1.add("c)fruits");
+			for(String OREDR:a1)
+				System.out.println(OREDR);
+		
+		char choice = sc.next().toLowerCase().charAt(0);
+		switch (choice) {
+		case 'a':
+			System.out.println("snacks");
+			break;
+		case 'b':
+			System.out.println("vegetable");
+			break;
+		case 'c':
+			System.out.println("fruits");
+			break;
+		}
+	}
 }
 

@@ -16,7 +16,7 @@ public class ABCGrocery extends Grocery implements GroceryDetails {
 	@Override
 	public String addToAddress() {
 		// TODO Auto-generated method stub
-		System.out.println("1/155,south street,alatur(Tk),perambalur(Dt),621204");
+		System.out.println("1/155,south street,madurai(Tk),madurai(Dt),621204");
 		return null;
 	}
 

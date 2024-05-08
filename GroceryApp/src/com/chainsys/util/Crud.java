@@ -9,10 +9,10 @@ public class Crud {
 	
 	static Jdbc db=new Jdbc();
 	public static void insert(int items,int productId, String productName, int qty,
-			int price, int totalPrice) throws ClassNotFoundException, SQLException {
+			int price, int totalPrice, String MobileNumber,String location) throws ClassNotFoundException, SQLException {
 		
 		Connection connection = db.getConnection();
-		String query = "insert into product values(?,?,?,?,?,?)";
+		String query = "insert into product values(?,?,?,?,?,?,?,?)";
 		PreparedStatement prepare = connection.prepareStatement(query);
 		prepare.setInt(1, items);
 		prepare.setInt(2, productId);
@@ -20,6 +20,8 @@ public class Crud {
 		prepare.setInt(4, qty);
 		prepare.setInt(5, price);
 		prepare.setInt(6, totalPrice);
+		prepare.setString(7,MobileNumber);
+		prepare.setString(8, location);
 		int rows = prepare.executeUpdate();
 		System.out.println("added:" + rows);
 
@@ -79,23 +81,14 @@ public class Crud {
 
 	}
 
-	public static void update(int items,int productId,int qty,int price,int totalPrice) throws SQLException, ClassNotFoundException {
+	public static void update(int items,int productId) throws SQLException, ClassNotFoundException {
 
 		Connection connection = db.getConnection();
-		String query = "update product set product_id= ?,qty = ?,price = ?,totalPrice = ? where items= ?";
+		String query = "update product set product_id = ? where items= ?";
 		PreparedStatement prepare = connection.prepareStatement(query);
 		prepare.setInt(1, productId);
-		prepare.setInt(2, qty);
-		prepare.setInt(3, price);
-		prepare.setInt(4, totalPrice);
-		prepare.setInt(5, items);
-		int executeUpdate=prepare.executeUpdate();
-		/*
-		 if(executeUpdate==1) {
-			System.out.println("updated");
-		}
-		else
-			System.out.println("Not updated");*/
+		prepare.setInt(2, items);
+		prepare.executeUpdate();
 		connection.close();
 		
 	}
