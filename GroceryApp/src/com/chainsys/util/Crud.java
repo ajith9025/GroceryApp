@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.chainsys.model.Product;
+
 public class Crud {
 	
 	static Jdbc db=new Jdbc();
@@ -26,6 +28,28 @@ public class Crud {
 		System.out.println("added:" + rows);
 
 	}
+	
+	/*public static void ProductList( Product items) throws ClassNotFoundException, SQLException
+	{
+		int temp=0;
+		Connection connection=db.getConnection();
+		String query="select productId,ProductName,qty,price,totalPrice,MobileNumber,location where items";
+		PreparedStatement prepare=connection.prepareStatement(query);
+		prepare .setInt(1, (int) items.getItems());
+        ResultSet rs = prepare.executeQuery();
+        while(rs.next()) {
+            System.out.println(rs.getInt(1)+"   "+rs.getString(2)+"   "+rs.getInt(3)+"   "+rs.getInt(4)+"  "+rs.getInt(5)+"   "+rs.getString(6)+" "+rs.getString(7));
+        }
+   }
+		
+		
+	private static int items() {
+		// TODO Auto-generated method stub
+		return 0;
+	}*/
+
+
+	
 
 	public static void delete(int items) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
@@ -60,7 +84,7 @@ public class Crud {
         }
 
 	}  
-	public static void login( String username, int password )
+	public static void login( String username, String password )
             throws ClassNotFoundException, SQLException {
         Connection connection =db.getConnection();
         String selectQuery = "select username,password from login where username= ? ";
@@ -72,7 +96,7 @@ public class Crud {
             String insertQuery = "insert into login(username, password) values ( ?, ?)";
             PreparedStatement insert = connection.prepareStatement(insertQuery);
             insert.setString(1, username);
-            insert.setInt(2, password);
+            insert.setString(2, password);
             insert.executeUpdate();
             System.out.println("Login successfully.");
         } else {

@@ -7,6 +7,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
+import com.chainsys.model.Product;
 import com.chainsys.util.Crud;
 
 public class GroceryApp {
@@ -73,9 +74,7 @@ public class GroceryApp {
 
 	public static void snacks() {
 		Scanner sc = new Scanner(System.in);
-		/*System.out.println("a.bingo");
-		System.out.println("b.biscuits");
-		System.out.println("c.cholates");*/
+		
 		List<String> a1=new ArrayList<String>();
 		a1.add("a.bingo");
 		a1.add("b.biscuits");
@@ -88,8 +87,7 @@ public class GroceryApp {
 		{
 			System.out.println(e.getMessage());
 		}
-		//for(String snacks:a1)
-			//System.out.println(snacks);
+		
 		char choice = sc.next().toLowerCase().charAt(0);
 
 		switch (choice) {
@@ -107,9 +105,7 @@ public class GroceryApp {
 
 	public static void vegetable() {
 		Scanner sc = new Scanner(System.in);
-	/*	System.out.println("a.potato");
-		System.out.println("b.tomato");
-		System.out.println("c.carrot");*/
+	
 		List<String> a1=new ArrayList<String>();
 		a1.add("a.potato");
 		a1.add("b.tomato");
@@ -122,8 +118,6 @@ public class GroceryApp {
 			{
 				System.out.println(e.getMessage());
 			}
-		//for(String vegetable:a1)
-			//System.out.println(vegetable);
 		
 		char choice = sc.next().toLowerCase().charAt(0);
 		switch (choice) {
@@ -141,9 +135,7 @@ public class GroceryApp {
 
 	public static void fruits() {
 		Scanner sc = new Scanner(System.in);
-		/*System.out.println("a.mango");
-		System.out.println("b.orange");
-		System.out.println("c.apple");*/
+	
 		List<String> a1=new ArrayList<String>();
 		a1.add("a.mango");
 		a1.add("b.orange");
@@ -156,9 +148,6 @@ public class GroceryApp {
 			{
 				System.out.println(e.getMessage());
 			}
-		//for(String fruits:a1)
-			//System.out.println(fruits);
-		
 		char choice = sc.next().toLowerCase().charAt(0);
 		switch (choice) {
 		case 'a':
@@ -173,22 +162,8 @@ public class GroceryApp {
 		}
 	}
 
-	public static void signup(String signup) {
-
-		System.out.println("Signup successfully");
-	}
-
-	public static void login(String login)
-
-	{
-		System.out.println("Login successfully");
-	}
-	
 	public static void HOME() {
 		Scanner sc = new Scanner(System.in);
-	/*	System.out.println("a.potato");
-		System.out.println("b.tomato");
-		System.out.println("c.carrot");*/
 		List<String> a1=new ArrayList<String>();
 		a1.add("a)qwertyuiop");
 		a1.add("b)trvxvvs");
@@ -211,9 +186,6 @@ public class GroceryApp {
 	}
 	public static void ABOUT() {
 		Scanner sc = new Scanner(System.in);
-	/*	System.out.println("a.potato");
-		System.out.println("b.tomato");
-		System.out.println("c.carrot");*/
 		List<String> a1=new ArrayList<String>();
 		a1.add("a)Join the Community");
 		a1.add("b)Where to Start");
@@ -236,9 +208,6 @@ public class GroceryApp {
 	}
 	public static void CONTACT() {
 		Scanner sc = new Scanner(System.in);
-	/*	System.out.println("a.potato");
-		System.out.println("b.tomato");
-		System.out.println("c.carrot");*/
 		List<String> a1=new ArrayList<String>();
 		a1.add("a)1234567890");
 		a1.add("b)9277236822");
@@ -249,7 +218,7 @@ public class GroceryApp {
 		char choice = sc.next().toLowerCase().charAt(0);
 		switch (choice) {
 		case 'a':
-			System.out.println("1234567890");
+			System.out.println("8734567890");
 			break;
 		case 'b':
 			System.out.println("9277236822");
@@ -261,9 +230,6 @@ public class GroceryApp {
 	}
 	public static void CART() {
 		Scanner sc = new Scanner(System.in);
-	/*	System.out.println("a.potato");
-		System.out.println("b.tomato");
-		System.out.println("c.carrot");*/
 		List<String> a1=new ArrayList<String>();
 		a1.add("a)biscuits");
 		a1.add("b)potato");
@@ -287,9 +253,6 @@ public class GroceryApp {
 	
 	public static void ORDER()  {
 		Scanner sc = new Scanner(System.in);
-	/*	System.out.println("a.potato");
-		System.out.println("b.tomato");
-		System.out.println("c.carrot");*/
 		List<String> a1=new ArrayList<String>();
 		a1.add("a)snacks");
 		a1.add("b)vegetable");
@@ -310,5 +273,16 @@ public class GroceryApp {
 			break;
 		}
 	}
+	/*public static void getBill(Product items,Grocery grocery) throws SQLException, ClassNotFoundException {
+        System.out.println("**********************************");
+        System.out.println("       AJITH AGENCY          ");
+        System.out.println("**********************************");
+        System.out.println("productId  productName  qty  price  totalPrice  mobileNumber  location  ");
+        System.out.println("**********************************");
+       Crud.ProductList(items);
+        System.out.println("**********************************");
+        System.out.println("Total amount :                "+grocery.getTotalamount());
+        System.out.println("**********************************");
+    }*/
 }
 

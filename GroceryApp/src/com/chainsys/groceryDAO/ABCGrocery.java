@@ -1,6 +1,6 @@
 package com.chainsys.groceryDAO;
 
-
+import java.sql.SQLException;
 
 public class ABCGrocery extends Grocery implements GroceryDetails {
 
@@ -51,10 +51,7 @@ public class ABCGrocery extends Grocery implements GroceryDetails {
 		return null;
 	}
 
-
-
-	
-	}
+}
 
 
 
